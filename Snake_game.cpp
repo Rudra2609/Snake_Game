@@ -1,16 +1,14 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
-#include <cstdlib>
-#include <ctime>
 
 using namespace std;
 
 int width, height, hs = 0;
 int fruitX, fruitY, score;
 bool gameover;
-bool gameStarted = false;
-bool firstRun = true;
+bool gamestrt = false;
+bool first = true;
 
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN};
 eDirection dir;
@@ -18,11 +16,11 @@ eDirection dir;
 struct Node {
     int x, y;
     Node* next;
-    Node(int x, int y) : x(x), y(y), next(nullptr) {}
+    Node(int x, int y) : x(x), y(y), next(NULL) {}
 };
 
-Node* head = nullptr;
-Node* tail = nullptr;
+Node* head = NULL;
+Node* tail = NULL;
 
 void SetColor(int color) {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
@@ -37,16 +35,16 @@ void HideCursor() {
 }
 
 void setup() {
-    if (firstRun) {
+    if (first) {
         cout << "Enter grid width: ";
         cin >> width;
         cout << "Enter grid height: ";
         cin >> height;
-        firstRun = false;
+        first = false;
     }
 
     gameover = false;
-    gameStarted = false;
+    gamestrt= false;
     dir = STOP;
     score = 0;
 
@@ -60,10 +58,10 @@ void setup() {
 void Draw() {
     HideCursor();
 
-    COORD cursorPosition;
-    cursorPosition.X = 0;
-    cursorPosition.Y = 0;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPosition);
+    COORD cursorposition;
+    cursorposition.X = 0;
+    cursorposition.Y = 0;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorposition);
 
     for (int i = 0; i < width + 2; i++)
         cout << "*";
@@ -111,20 +109,20 @@ void Input() {
         char key = _getch();
         switch (key) {
             case 'a':
-                if (gameStarted && dir == RIGHT) gameover = true;
-                else { dir = LEFT; gameStarted = true; }
+                if (gamestrt && dir == RIGHT) gameover = true;
+                else { dir = LEFT; gamestrt = true; }
                 break;
             case 'd':
-                if (gameStarted && dir == LEFT) gameover = true;
-                else { dir = RIGHT; gameStarted = true; }
+                if (gamestrt && dir == LEFT) gameover = true;
+                else { dir = RIGHT; gamestrt = true; }
                 break;
             case 'w':
-                if (gameStarted && dir == DOWN) gameover = true;
-                else { dir = UP; gameStarted = true; }
+                if (gamestrt&& dir == DOWN) gameover = true;
+                else { dir = UP; gamestrt = true; }
                 break;
             case 's':
-                if (gameStarted && dir == UP) gameover = true;
-                else { dir = DOWN; gameStarted = true; }
+                if (gamestrt && dir == UP) gameover = true;
+                else { dir = DOWN; gamestrt = true; }
                 break;
             case 'x':
                 gameover = true;
@@ -157,9 +155,9 @@ void MoveSnake() {
         temp = temp->next;
     }
 
-    Node* newHead = new Node(newX, newY);
-    newHead->next = head;
-    head = newHead;
+    Node* new_head = new Node(newX, newY);
+    new_head->next = head;
+    head = new_head;
 
     if (newX == fruitX && newY == fruitY) {
         score += 5;
@@ -167,14 +165,14 @@ void MoveSnake() {
         fruitX = rand() % width;
         fruitY = rand() % height;
     } else {
-        Node* prev = nullptr;
+        Node* prev = NULL;
         Node* current = head;
         while (current->next) {
             prev = current;
             current = current->next;
         }
         if (prev) {
-            prev->next = nullptr;
+            prev->next = NULL;
             delete current;
         }
     }
