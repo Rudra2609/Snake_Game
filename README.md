@@ -2,23 +2,23 @@
 
 This is a classic Snake game implemented in C++ using the console. The game has a dynamically growing snake, collision detection, and a simple interface with color support. Players control the snake by using keyboard inputs and try to eat fruit to increase their score.
 
-# Features
+# Features  
 
--> Dynamically growing snake
--> Randomly generated fruit positions
--> Collision detection
--> Score tracking with a high score feature
--> Glides with less flicker
--> Colored graphics
--> Ability to reset game in case of game over
+-> Dynamically growing snake  
+-> Randomly generated fruit positions  
+-> Collision detection  
+-> Score tracking with a high score feature  
+-> Glides with less flicker  
+-> Colored graphics  
+-> Ability to reset game in case of game over  
 
-# Controls
+# Controls  
 
--> W: Up
--> A: Left
--> S: Down
--> D: Right
--> X: Quit game
+-> W: Up  
+-> A: Left  
+-> S: Down  
+-> D: Right  
+-> X: Quit game  
 
 # How to Play
 
