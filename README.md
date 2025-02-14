@@ -22,36 +22,36 @@ This is a classic Snake game implemented in C++ using the console. The game has 
 
 # How to Play
 
--> Run the program.
--> Enter the grid size (width and height).
--> Use W, A, S, D keys to move the snake.
--> Eat the fruit (&) to grow and increase your score.
-->Avoid colliding with the walls and yourself.
--> If you lose, press R to restart or X to exit.
+-> Run the program.  
+-> Enter the grid size (width and height).  
+-> Use W, A, S, D keys to move the snake.  
+-> Eat the fruit (&) to grow and increase your score.  
+->Avoid colliding with the walls and yourself.  
+-> If you lose, press R to restart or X to exit.  
 
 # Prerequisites
 
--> C++ Compiler
--> Windows OS (makes use of windows.h and _kbhit() for input)
--> Compilation (Windows)
--> Open Command Prompt and go to the directory of the source file.
--> Compile using g++:
--> g++ -o snake_game snake_game.cpp -std=c++11
--> Run the executable:
--> snake_game
+-> C++ Compiler  
+-> Windows OS (makes use of windows.h and _kbhit() for input)  
+-> Compilation (Windows)  
+-> Open Command Prompt and go to the directory of the source file.  
+-> Compile using g++:  
+-> g++ -o snake_game snake_game.cpp -std=c++11  
+-> Run the executable:  
+-> snake_game  
 
 # Code Explanation
 
--> The game is built on the following key methods:
--> setup() initializes game variables and calls the production of the first fruit.
--> Draw() draws the game board by rendering walls, snake, and fruit.
--> Input() captures user inputs for movement.
--> MoveSnake() updates positions of the snake and checks for collision.
--> GameOverScreen() prints out game over messages with restart functionality
+-> The game is built on the following key methods:  
+-> setup() initializes game variables and calls the production of the first fruit.  
+-> Draw() draws the game board by rendering walls, snake, and fruit. 
+-> Input() captures user inputs for movement.  
+-> MoveSnake() updates positions of the snake and checks for collision.  
+-> GameOverScreen() prints out game over messages with restart functionality  
 
 # Author
 
-Rudra Trivedi
-Prit Kasundra
-Parth Sorathiya
-Aryan Dalsaniya
+Rudra Trivedi  
+Prit Kasundra  
+Parth Sorathiya  
+Aryan Dalsaniya  
