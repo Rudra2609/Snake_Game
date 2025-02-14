@@ -48,7 +48,8 @@ void setup(){
     score = 0;
 
     head = new Node(width/2,height/2);
-    tail = head;
+    Node* second = new Node(width/2-1,height/2);
+    Node* third = new Node(width/2-2,height/2);
 
     fruitX = rand()%width;
     fruitY = rand()%height;
