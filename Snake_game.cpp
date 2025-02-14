@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
@@ -12,10 +13,17 @@ bool first=true;
 enum eDirection {STOP = 0,LEFT,RIGHT,UP,DOWN};
 eDirection dir;
 
-struct Node {
-    int x,y;
-    Node* next;
-    Node(int x,int y) : x(x),y(y),next(NULL){}
+// struct Node {
+//     int x,y;
+//     Node* next;
+//     Node(int x,int y) : x(x),y(y),next(NULL){}
+// };
+
+class Node{
+    public:
+        int x,y;
+        Node* next;
+        Node(int x,int y) : x(x),y(y),next(NULL){}
 };
 
 Node* head = NULL;
@@ -34,7 +42,7 @@ void HideCursor(){
 }
 
 void setup(){
-    if (first){
+    if(first){
         cout<<"Enter grid width: ";
         cin>>width;
         cout<<"Enter grid height: ";
@@ -50,6 +58,10 @@ void setup(){
     head = new Node(width/2,height/2);
     Node* second = new Node(width/2-1,height/2);
     Node* third = new Node(width/2-2,height/2);
+
+    head->next = second;
+    second->next = third;
+    tail = third;
 
     fruitX = rand()%width;
     fruitY = rand()%height;
@@ -84,7 +96,7 @@ void Draw(){
             }
 
             if(!printed){
-                if (i==fruitY && j==fruitX)
+                if(i==fruitY && j==fruitX)
                     cout<<"&";
                 else
                     cout<<" ";
@@ -207,7 +219,7 @@ int main(){
             Draw();
             Input();
             MoveSnake();
-            Sleep(70);
+            Sleep(100);
         }
         GameOverScreen();
     }
