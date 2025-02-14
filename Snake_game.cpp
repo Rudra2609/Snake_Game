@@ -13,7 +13,7 @@ enum eDirection {STOP = 0,LEFT,RIGHT,UP,DOWN};
 eDirection dir;
 
 struct Node {
-    int x y;
+    int x,y;
     Node* next;
     Node(int x,int y) : x(x),y(y),next(NULL){}
 };
